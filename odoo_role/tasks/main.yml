@@ -1,0 +1,14 @@
+- name: Déployer Odoo avec Docker Compose
+  docker_compose:
+    project_src: /path/to/odoo
+    definition:
+      version: '3.7'
+      services:
+        odoo:
+          image: odoo:13
+          ports:
+            - "8069:8069"
+          volumes:
+            - odoo-data:/var/lib/odoo
+      volumes:
+        odoo-data: {}
